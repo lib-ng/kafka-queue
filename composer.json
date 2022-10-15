@@ -2,11 +2,11 @@
     "name": "lib-ng/kafka-queue",
     "description": "adapted from antoniopapa/kafka-queue with some modifications to ensure it works with Laravel 9 and sail",
     "require": {
-        "laravel/framework": "^8.50"
+        "laravel/framework": "^9.19"
     },
     "authors": [
         {
-            "name": "Emmanuel Chukwu",
+            "name": "Library Technology Ltd",
             "email": "emmanuel.chukwu@gmail.com"
         }
     ]
