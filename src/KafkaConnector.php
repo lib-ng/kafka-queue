@@ -19,6 +19,7 @@ class KafkaConnector implements ConnectorInterface
         $conf = $this->setCommonParameters($config);
         $conf->set('message.send.max.retries', 5);
         $producer = new \RdKafka\Producer($conf);
+        dump("Producer created");
         $producer->setLogLevel(LOG_DEBUG);
         return $producer;
     }
@@ -28,11 +29,12 @@ class KafkaConnector implements ConnectorInterface
         $conf->set('group.id', $config['group_id']);
         $conf->set('auto.offset.reset', 'earliest');
 
-        $consumer = new \RdKafka\KafkaConsumer($conf);
-        
+        $consumer = new \RdKafka\KafkaConsumer($conf);        
+        dump("Consumer created");
+
         $topic = $config['queue'];
         $consumer->subscribe([$topic]);
-        dump("subscribed to topic - $topic");
+        dump("Consumer subscribed to topic - $topic");
         return $consumer;
     }
 

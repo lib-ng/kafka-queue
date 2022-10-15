@@ -57,7 +57,7 @@ class KafkaQueue extends Queue implements QueueContract
         while ($this->producer->getOutQLen() > 0) {
             $this->producer->poll(50);
         }
-        echo "Successful produced on topic - $topic_name" . PHP_EOL;
+        dump("Successful produced on topic - $topic_name" . PHP_EOL);
 
         $this->producer->flush(1000);
     }
