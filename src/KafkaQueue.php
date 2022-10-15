@@ -23,7 +23,7 @@ class KafkaQueue extends Queue implements QueueContract
     public function pop($queue = null)
     {     
         try{
-            $message = $this->consumer->consume(30 * 1000);
+            $message = $this->consumer->consume(300 * 1000);
 
             switch($message->err){
                 case RD_KAFKA_RESP_ERR_NO_ERROR:
